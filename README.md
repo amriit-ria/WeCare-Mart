@@ -1,20 +1,8 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+E-Commerce Website
+An E-Commerce Website is an online platform that allows customers to browse, search, and purchase products from anywhere at any time. The system provides a convenient shopping experience by enabling users to view product details, add items to a cart, place orders, and make payments online.
 
-# Run and deploy your AI Studio app
+This project includes features for both customers and administrators. Customers can create accounts, log in securely, manage their profiles, place orders, and track their purchases. Administrators can manage products, categories, orders, users, and inventory through an admin dashboard.
 
-This contains everything you need to run your app locally.
+The main goal of this project is to provide a user-friendly, secure, and efficient online shopping platform that simplifies the buying and selling process while improving customer satisfaction and business management.
 
-View your app in AI Studio: https://ai.studio/apps/d8e6fe32-bba9-4263-9746-67d36f528402
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Author= Amrit Sitaula
