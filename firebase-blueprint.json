@@ -1,0 +1,102 @@
+{
+  "databaseId": "ai-studio-d8e6fe32-bba9-4263-9746-67d36f528402",
+  "region": "us-central1",
+  "collections": {
+    "orders": {
+      "path": "orders/{orderId}",
+      "description": "Durable customer orders registered securely by verified accounts",
+      "fields": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID linking the order strictly to the purchaser's profile"
+        },
+        "name": {
+          "type": "string",
+          "description": "Recipient full name"
+        },
+        "email": {
+          "type": "string",
+          "description": "Recipient email notification address"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Recipient telephone contact channel"
+        },
+        "address": {
+          "type": "string",
+          "description": "Full street, city and zip delivery location"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "description": "Payment gateway configuration mapping (e.g. PayPal, Visa)"
+        },
+        "total": {
+          "type": "number",
+          "description": "Cumulative price total of order checkout invoice"
+        },
+        "date": {
+          "type": "string",
+          "description": "Human-readable order placement date"
+        },
+        "deliveryDate": {
+          "type": "string",
+          "description": "Estimated distribution logistics completion date"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of database transaction entry"
+        },
+        "items": {
+          "type": "array",
+          "description": "Collection of cart items containing purchased products and quantities"
+        }
+      },
+      "securityRules": {
+        "read": "request.auth != null && resource.data.userId == request.auth.uid",
+        "create": "request.auth != null && request.resource.data.userId == request.auth.uid",
+        "update": "false",
+        "delete": "false"
+      }
+    },
+    "users": {
+      "path": "users/{userId}",
+      "description": "Secure customer profile details and shipping coordinates",
+      "fields": {
+        "name": {
+          "type": "string",
+          "description": "Customer display name"
+        },
+        "email": {
+          "type": "string",
+          "description": "Customer registered contact email"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Customer default contact telephone line"
+        },
+        "address": {
+          "type": "string",
+          "description": "Customer default street address location"
+        },
+        "city": {
+          "type": "string",
+          "description": "Customer default city or region"
+        },
+        "zipCode": {
+          "type": "string",
+          "description": "Customer default postal index code"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last modification"
+        }
+      },
+      "securityRules": {
+        "read": "request.auth != null && request.auth.uid == userId",
+        "create": "request.auth != null && request.auth.uid == userId",
+        "update": "request.auth != null && request.auth.uid == userId",
+        "delete": "false"
+      }
+    }
+  }
+}
